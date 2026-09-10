@@ -170,6 +170,51 @@ form select {
 <a href="https://x.com/sn8574945034326">𝕏 X</a>
 <a href="https://m.me/">💬 Messenger</a>
     </div>
+    <script>
+const form = document.querySelector("form");
+
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
+    const sweet = document.getElementById("sweet").value;
+    const quantity = document.getElementById("quantity").value;
+
+    const message =
+        "New order\n" +
+        "Name: " + name + "\n" +
+        "Phone: " + phone + "\n" +
+        "Sweet: " + sweet + "\n" +
+        "Quantity: " + quantity;
+
+    const choice = prompt(
+        "Choose:\n1 - WhatsApp\n2 - Telegram\n3 - Messenger\n4 - Email"
+    );
+
+    if (choice === "1") {
+        window.location.href =
+            "https://wa.me/9647731565510?text=" +
+            encodeURIComponent(message);
+    }
+
+    else if (choice === "2") {
+        window.location.href =
+            "https://t.me/+9647731565510?text=" +
+            encodeURIComponent(message);
+    }
+
+    else if (choice === "3") {
+        window.location.href =
+            "https://m.me/?text=" +
+            encodeURIComponent(message);
+    }
+
+    else if (choice === "4") {
+        form.submit();
+    }
+});
+    </script>
 </body>
     
 </html>
