@@ -446,41 +446,47 @@ footer {
 </footer>
 
 <script>
+
+
+  
 function selectSweet(sweet) {
   document.getElementById("sweet").value = sweet;
+
   document.getElementById("order").scrollIntoView({
     behavior: "smooth"
   });
 }
 
-document.getElementById("orderForm").addEventListener("submit", function(event) {
-  event.preventDefault();
+const orderForm = document.getElementById("orderForm");
 
-  const name = document.getElementById("name").value;
-  const phone = document.getElementById("phone").value;
-  const sweet = document.getElementById("sweet").value;
-  const quantity = document.getElementById("quantity").value;
-  const notes = document.getElementById("notes").value;
+if (orderForm) {
+  orderForm.addEventListener("submit", function(event) {
+    event.preventDefault();
 
-  const message =
-    "🍰 داواکاری نوێ - شیرینی زانا\n\n" +
-    "ناو: " + name + "\n" +
-    "مۆبایل: " + phone + "\n" +
-    "شیرینی: " + sweet + "\n" +
-    "بڕ: " + quantity + "\n" +
-    "تێبینی: " + notes;
+    const name = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
+    const sweet = document.getElementById("sweet").value;
+    const quantity = document.getElementById("quantity").value;
+    const notes = document.getElementById("notes").value;
 
-  const whatsapp =
-  "https://wa.me/9647731565510?text=" +
-  encodeURIComponent(message);
+    const message =
+      "🍰 شیرینی زانا - داواکاری نوێ\n\n" +
+      "ناو: " + name + "\n" +
+      "مۆبایل: " + phone + "\n" +
+      "شیرینی: " + sweet + "\n" +
+      "بڕ: " + quantity + "\n" +
+      "تێبینی: " + notes;
 
-window.location.href = whatsapp;
-});
+    const whatsapp =
+      "https://wa.me/9647731565510?text=" +
+      encodeURIComponent(message);
+
+    window.location.href = whatsapp;
+  });
+}
 </script>
 
-  window.location.href = whatsapp;
-});
-</script>
+
 
 </body>
 </html>
