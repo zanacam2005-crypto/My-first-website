@@ -1,220 +1,482 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="ku" dir="rtl">
 <head>
-    <title>شیرینی زانا</title>
-</head>
-    <style>
-body {
-    background-color:#fff8ed;
-    text-align: center;
-    
-}   
-        h1 {
-    font-size: 40px;
-        color: #6b3e26;
-        }
-        .card {
-    background-color: white;
-    border-radius: 15px;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 300px;
-box-sizing: border-box;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    transition: 0.3s;
-        }
-        .card:hover {
-    transform: translateY(-5px);
-        }
-        img {
-    width: 300px;
-max-width: calc(100vw - 40px);
-    height: 300px;
-    object-fit: cover;
-        }
-        .card img {
-    width: 100%;
-        }
-        .card button {
-    background-color: #6b3e26;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-        }
-        .card button:hover {
-    background-color: #8b5a3c;
-        }
-        form {
-    background-color: white;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 350px;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
-        form input,
-form select {
-    width: 100%;
-    padding: 10px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>شیرینی زانا | Sweet Zana</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-   form button {
-    background-color: #6b3e26;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-   }
-        .contact {
-    display: flex;
-    flex-wrap: wrap;
+
+body {
+  font-family: Arial, sans-serif;
+  background: #fff8ed;
+  color: #4b2c20;
+  line-height: 1.8;
+}
+
+header {
+  background: white;
+  padding: 15px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  box-shadow: 0 2px 10px #0001;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: bold;
+  color: #6b3e26;
+}
+
+nav a {
+  color: #4b2c20;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #b7791f;
+}
+
+.hero {
+  min-height: 380px;
+  padding: 60px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  background: linear-gradient(90deg, #5a301d, #a96d38);
+  color: white;
+}
+
+.hero-text {
+  max-width: 500px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.btn {
+  display: inline-block;
+  background: #d59a35;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 25px;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background: #b7791f;
+}
+
+section {
+  padding: 45px 5%;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 30px;
+  color: #6b3e26;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.card {
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 3px 15px #0002;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card h3 {
+  font-size: 21px;
+  margin-bottom: 5px;
+}
+
+.price {
+  color: #9b641d;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.order-btn {
+  background: #6b3e26;
+  color: white;
+  border: none;
+  padding: 9px 18px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.order-btn:hover {
+  background: #a96d38;
+}
+
+.order-section {
+  background: #f2e7d8;
+}
+
+.order-box {
+  background: white;
+  max-width: 650px;
+  margin: auto;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 3px 15px #0001;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d8c7b5;
+  border-radius: 7px;
+  font-size: 16px;
+  font-family: inherit;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.submit-btn {
+  width: 100%;
+  background: #6b3e26;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background: #a96d38;
+}
+
+.contact {
+  text-align: center;
+  padding: 30px;
+  background: #3b251b;
+  color: white;
+}
+
+.contact a {
+  color: #f4c66d;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+footer {
+  background: #241810;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  header {
     justify-content: center;
-    gap: 10px;
-    margin: 20px;
-        }
-    </style>
+  }
+
+  nav {
+    text-align: center;
+  }
+
+  nav a {
+    margin: 0 5px;
+    font-size: 14px;
+  }
+
+  .hero {
+    text-align: center;
+    justify-content: center;
+    padding: 45px 20px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .card img {
+    height: 145px;
+  }
+
+  .card h3 {
+    font-size: 17px;
+  }
+
+  .card-content {
+    padding: 10px;
+  }
+
+  .order-box {
+    padding: 20px;
+  }
+}
+</style>
+</head>
 
 <body>
 
+<header>
+  <div class="logo">🍰 شیرینی زانا</div>
+
+  <nav>
+    <a href="#home">سەرەتا</a>
+    <a href="#products">شیرینییەکان</a>
+    <a href="#order">داواکاری</a>
+    <a href="#contact">پەیوەندی</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-text">
     <h1>شیرینی زانا</h1>
-    <p>ئامادەین بۆ دروستکردنی هەموو جۆرە شیرینییە عێراقییەکان</p>
-<h2>جۆرەکانی شیرینی</h2>
-<div class="card">
-    <h3>پاقلاوە</h3>
-    <p>نرخ: ٣,٠٠٠ دینار بۆ ١ کیلۆ</p>
-    <p>پاقلاوەی تازە و خۆشەویست</p>
-    <button>داواکاری</button>
-    <img src="Screenshot_20260909-181234_1.png" alt="پاقلاوە">
-</div>
-<div class="card">
-<h3>چۆرەک</h3>
-            <p>نرخ: ٢,٢٠٠ دینار بۆ ١ کیلۆ</p>
-<p>١ کارتۆن (٥ کیلۆ): ١١,٠٠٠ دینار</p>  
-    <button>داواکاری</button>
-    <img src="Screenshot_20260909-181644_1.png" alt="چۆرەک">
-</div>
+    <p>تامێکی خۆش، کوالێتییەکی بەرز، خۆشەویستی لە هەر دانەیەکدا.</p>
+    <a href="#products" class="btn">بینینی شیرینییەکان ↓</a>
+  </div>
+</section>
+
+<section id="products">
+  <h2 class="section-title">شیرینییەکانمان</h2>
+
+  <div class="products">
+
     <div class="card">
-    <h3>کاپ کیک</h3>
-    <p>نرخ: ٤,٥٠٠ دینار بۆ ١ کارتۆن (٢٤ دانە)</p>
-    <button>داواکاری</button>
-  <img src="Screenshot_20260910-112637_2.png">
-    
+      <img src="Screenshot_20260909-181234_1.png" alt="باقلawa">
+      <div class="card-content">
+        <h3>باقلاوە</h3>
+        <p class="price">١٢,٠٠٠ دینار / کیلۆ</p>
+        <button class="order-btn" onclick="selectSweet('باقلاوە')">داواکاری</button>
+      </div>
     </div>
-     <div class="card"> 
-    <h3>بەقسم</h3>
-        
-    <p>نرخ: ٢,١٠٠ دینار بۆ ١ کیلۆ</p>
-<p>٥ کیلۆ: ١١,٠٠٠ دینار</p>
-    <button>داواکاری</button>
-  
-<img src="Screenshot_20260909-181536_1.png" alt="بقسم">
-</div>
-  <div class="card">
-    <h3>دهنە</h3>
-    <p>نرخ: ٣,٠٠٠ دینار بۆ ١ کیلۆ</p>
-    <button>داواکاری</button>
-    <img src="Screenshot_20260909-181503_1.png" alt="دهنە">
-   </div>
+
     <div class="card">
-    <h3>زنود</h3>
-    <p>نرخ: ٤,٠٠٠ دینار بۆ ١ کیلۆ</p>
-    <button>داواکاری</button>
-    <img src="Screenshot_20260909-181443_1.png" alt="زنود">
-   </div>
-   <div class="card">
-    <h3>داطلی</h3>
-    <p>نرخ: ٣,٠٠٠ دینار بۆ ١ کیلۆ</p>
-    <button>داواکاری</button>
-    <img src="Screenshot_20260909-181606_1.png" alt="داطلی">
-   </div>
-<h2>داواکاری شیرینی</h2>
-    <form
-        action="https://formsubmit.co/ibrahimbaghdad2006@gmail.com" method="POST">
-        <label for="name">ناو:</label>
-        <input type="text" id="name" name="name" required>
-        <label for="phone">ژمارەی مۆبایل:</label>
-        <input type="tel" id="phone" name="phone" required>
-        <label for="email">ئیمەیڵ:</label>
-        <label for="sweet">شیرینی:</label>
-        <select id="sweet" name="sweet" required>
-        <option value="">هەڵبژێرە</option>
-         <option>پاقلاوە</option>
-            <option>چۆرەک</option>
-         <option>کاپ کیک</option>
-            <option>بەقسم</option>
-           <option>دهنە</option>
-            <option>زنود</option>
-           <option>داطلی</option>
+      <img src="Screenshot_20260909-181644_1.png" alt="جۆزە">
+      <div class="card-content">
+        <h3>جۆزە</h3>
+        <p class="price">١٢,٠٠٠ دینار / کیلۆ</p>
+        <button class="order-btn" onclick="selectSweet('جۆزە')">داواکاری</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="Screenshot_20260910-112637_2.png" alt="کاب کیک">
+      <div class="card-content">
+        <h3>کاب کیک</h3>
+        <p class="price">٤,٥٠٠ دینار / کارتۆن</p>
+        <button class="order-btn" onclick="selectSweet('کاب کیک')">داواکاری</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="Screenshot_20260909-181536_1.png" alt="بقسام">
+      <div class="card-content">
+        <h3>بقسام</h3>
+        <p class="price">١٢,٠٠٠ دینار / کیلۆ</p>
+        <button class="order-btn" onclick="selectSweet('بقسام')">داواکاری</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="Screenshot_20260909-181503_1.png" alt="دهنە">
+      <div class="card-content">
+        <h3>دهنە</h3>
+        <p class="price">١٢,٠٠٠ دینار / کیلۆ</p>
+        <button class="order-btn" onclick="selectSweet('دهنە')">داواکاری</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="Screenshot_20260909-181443_1.png" alt="زنود">
+      <div class="card-content">
+        <h3>زنود</h3>
+        <p class="price">١٢,٠٠٠ دینار / کیلۆ</p>
+        <button class="order-btn" onclick="selectSweet('زنود')">داواکاری</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="Screenshot_20260909-181606_1.png" alt="داتلی">
+      <div class="card-content">
+        <h3>داتلی</h3>
+        <p class="price">١٢,٠٠٠ دینار / کیلۆ</p>
+        <button class="order-btn" onclick="selectSweet('داتلی')">داواکاری</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="order-section" id="order">
+  <h2 class="section-title">داواکاری شیرینی</h2>
+
+  <div class="order-box">
+    <form id="orderForm">
+
+      <div class="form-group">
+        <label for="name">ناو</label>
+        <input type="text" id="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">ژمارەی مۆبایل</label>
+        <input type="tel" id="phone" required>
+      </div>
+
+      <div class="form-group">
+        <label for="sweet">جۆری شیرینی</label>
+        <select id="sweet" required>
+          <option value="">هەڵبژێرە</option>
+          <option>باقلاوە</option>
+          <option>جۆزە</option>
+          <option>کاب کیک</option>
+          <option>بقسام</option>
+          <option>دهنە</option>
+          <option>زنود</option>
+          <option>داتلی</option>
         </select>
-        <label for="quantity">بڕ:</label>
-        <input type="number" id="quantity" name="quantity" min="1" required>
-        <button type="submit">ناردنی داواکاری</button>
-        
+      </div>
+
+      <div class="form-group">
+        <label for="quantity">بڕی داواکراو</label>
+        <input type="number" id="quantity" min="1" required>
+      </div>
+
+      <div class="form-group">
+        <label for="notes">تێبینی (ئاختیاری)</label>
+        <textarea id="notes" placeholder="تێبینییەکانت بنووسە..."></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">
+        ناردنی داواکاری بۆ WhatsApp
+      </button>
+
     </form>
-    <div class="contact">
-    0<a href="tel:07709002596">📞 07709002596</a>
-    <a href="mailto:ibrahimbaghdad2006@gmail.com">📧 ibrahimbaghdad2006@gmail.com</a>
-<a href="https://wa.me/9647731565510">🟢 WhatsApp</a>
-    <a href="https://t.me/+9647731565510">✈️ Telegram</a>
-    <a href="https://www.facebook.com/profile.php?id=615931424543002">📘 Facebook</a>
-<a href="https://www.instagram.com/ibrahimbaghdad2006/">📸 Instagram</a>
-<a href="https://www.tiktok.com/@z.s.rah">🎵 TikTok</a>
-<a href="https://x.com/sn8574945034326">𝕏 X</a>
-<a href="https://m.me/">💬 Messenger</a>
-    </div>
-    <script>
-const form = document.querySelector("form");
+  </div>
+</section>
 
-form.addEventListener("submit", function(event) {
-    event.preventDefault();
+<section class="contact" id="contact">
+  <h2>پەیوەندیمان پێوە بکە</h2>
+  <p>بۆ داواکاری و زانیاری زیاتر</p>
 
-    const name = document.getElementById("name").value;
-    const phone = document.getElementById("phone").value;
-    const sweet = document.getElementById("sweet").value;
-    const quantity = document.getElementById("quantity").value;
+  <p>
+    📞 <a href="tel:07709002596">07709002596</a>
+  </p>
 
-    const message =
-        "New order\n" +
-        "Name: " + name + "\n" +
-        "Phone: " + phone + "\n" +
-        "Sweet: " + sweet + "\n" +
-        "Quantity: " + quantity;
+  <p>
+    📧 <a href="mailto:ibrahimbaghdad2006@gmail.com">
+      ئیمەیڵ
+    </a>
+  </p>
 
-    const choice = prompt(
-        "Choose:\n1 - WhatsApp\n2 - Telegram\n3 - Messenger\n4 - Email"
-    );
+  <p>
+    💬 <a href="https://wa.me/9647731556510">WhatsApp</a>
+    <a href="https://t.me/+9647731556510">Telegram</a>
+  </p>
+</section>
 
-    if (choice === "1") {
-        window.location.href =
-            "https://wa.me/9647731565510?text=" +
-            encodeURIComponent(message);
-    }
+<footer>
+  © 2026 شیرینی زانا — هەموو مافەکان پارێزراون.
+</footer>
 
-    else if (choice === "2") {
-        window.location.href =
-            "https://t.me/+9647731565510?text=" +
-            encodeURIComponent(message);
-    }
+<script>
+function selectSweet(sweet) {
+  document.getElementById("sweet").value = sweet;
+  document.getElementById("order").scrollIntoView({
+    behavior: "smooth"
+  });
+}
 
-    else if (choice === "3") {
-        window.location.href =
-            "https://m.me/?text=" +
-            encodeURIComponent(message);
-    }
+document.getElementById("orderForm").addEventListener("submit", function(event) {
+  event.preventDefault();
 
-    else if (choice === "4") {
-        form.submit();
-    }
+  const name = document.getElementById("name").value;
+  const phone = document.getElementById("phone").value;
+  const sweet = document.getElementById("sweet").value;
+  const quantity = document.getElementById("quantity").value;
+  const notes = document.getElementById("notes").value;
+
+  const message =
+    "🍰 داواکاری نوێ - شیرینی زانا\n\n" +
+    "ناو: " + name + "\n" +
+    "مۆبایل: " + phone + "\n" +
+    "شیرینی: " + sweet + "\n" +
+    "بڕ: " + quantity + "\n" +
+    "تێبینی: " + notes;
+
+  const whatsapp =
+    "https://wa.me/9647731556510?text=" +
+    encodeURIComponent(message);
+
+  window.location.href = whatsapp;
 });
-    </script>
+</script>
+
 </body>
-    
 </html>
