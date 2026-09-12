@@ -1,1 +1,218 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zana Sweet Room | ماڵی شیرینی زانا</title>
+<meta name="description" content="Zana Sweet Room - شیرینییە تازە و خۆشەکان بۆ هەر بۆنەیەک">
+<style>
+:root{
+  --cream:#fffaf3;--paper:#fff;--ink:#2e211c;--muted:#78665d;
+  --brown:#633b2c;--gold:#c58b45;--gold2:#e8bd78;--line:#eadfd4;
+  --green:#218c63;--shadow:0 18px 55px rgba(65,38,24,.12);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Tahoma,"Noto Sans Arabic",Arial,sans-serif;line-height:1.8}
+a{text-decoration:none;color:inherit}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+.container{width:min(1160px,92%);margin:auto}
+.topbar{background:var(--brown);color:#fff7ed;font-size:13px}
+.topbar .container{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:8px 0}
+header{position:sticky;top:0;z-index:20;background:rgba(255,250,243,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:82px}
+.brand{display:flex;align-items:center;gap:10px;white-space:nowrap}
+.logo{width:47px;height:47px;border-radius:16px;background:linear-gradient(135deg,var(--brown),#9b5f3f);display:grid;place-items:center;color:white;font-size:25px;box-shadow:0 8px 20px #633b2c2b}
+.brand strong{font-family:Georgia,serif;font-size:25px;letter-spacing:-.6px}
+.brand small{display:block;color:var(--muted);font-size:11px;margin-top:-5px}
+nav{display:flex;gap:24px;font-size:14px;font-weight:bold}
+nav a{color:var(--muted)}
+nav a:hover{color:var(--brown)}
+.actions{display:flex;align-items:center;gap:8px}
+.lang{border:1px solid var(--line);background:white;border-radius:999px;padding:8px 12px;color:var(--brown)}
+.cart{border:0;background:var(--brown);color:#fff;border-radius:999px;padding:10px 15px}
+.menu{display:none;border:1px solid var(--line);background:#fff;border-radius:12px;padding:9px 12px}
+.hero{padding:58px 0 30px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:48px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:#f5e5ce;color:var(--brown);border-radius:999px;padding:6px 13px;font-size:13px;font-weight:bold}
+h1{font-family:Georgia,serif;font-size:clamp(38px,5vw,68px);line-height:1.16;margin:20px 0 16px;letter-spacing:-1.5px}
+h1 span{color:var(--gold)}
+.hero p{color:var(--muted);font-size:16px;max-width:570px}
+.hero-buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 20px;border-radius:999px;border:1px solid var(--line);font-weight:bold}
+.btn.primary{background:var(--brown);color:#fff;border-color:var(--brown)}
+.btn.secondary{background:#fff;color:var(--brown)}
+.hero-art{position:relative;min-height:410px}
+.hero-art img{width:100%;height:410px;object-fit:cover;border-radius:34px;box-shadow:var(--shadow)}
+.floating{position:absolute;bottom:22px;right:-18px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:15px 18px;box-shadow:var(--shadow);font-size:13px}
+.floating b{display:block;font-size:20px;color:var(--brown)}
+.section{padding:55px 0}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:25px}
+.section-head h2{font-family:Georgia,serif;font-size:34px;margin:0}
+.section-head p{color:var(--muted);margin:5px 0 0;font-size:14px}
+.categories{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.category{background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px;text-align:center;transition:.2s}
+.category:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.category img{width:100%;height:125px;object-fit:cover;border-radius:15px;margin-bottom:10px}
+.category b{display:block;color:var(--brown)}
+.category small{color:var(--muted);font-size:12px}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{background:#fff;border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:0 5px 20px #633b2c08}
+.card img{width:100%;height:190px;object-fit:cover}
+.card-body{padding:17px}
+.code{font-size:11px;color:var(--gold);font-weight:bold;letter-spacing:1px}
+.card h3{margin:5px 0;font-size:17px}
+.card p{font-size:12px;color:var(--muted);min-height:45px}
+.price{font-weight:bold;color:var(--brown);font-size:17px}
+.card-bottom{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:12px}
+.add{border:0;background:#f7ead9;color:var(--brown);border-radius:999px;padding:8px 12px;font-weight:bold}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.feature{background:#f4e5d2;border-radius:24px;padding:24px}
+.feature .icon{font-size:30px}
+.feature h3{margin:7px 0 4px}
+.feature p{color:var(--muted);font-size:13px;margin:0}
+.order-box{background:linear-gradient(135deg,#633b2c,#8b543b);color:#fff;border-radius:30px;padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.order-box p{color:#f6dfca}
+.order-form{background:#fff;color:var(--ink);border-radius:22px;padding:22px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+label{display:block;font-size:12px;font-weight:bold;color:var(--muted);margin-bottom:5px}
+input,select,textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:11px;background:#fff;outline:none}
+textarea{min-height:90px;resize:vertical}
+.full{grid-column:1/-1}
+.submit{width:100%;border:0;background:var(--brown);color:#fff;border-radius:999px;padding:13px;font-weight:bold;margin-top:12px}
+footer{background:#2b1d18;color:#f9eade;padding:38px 0 20px;margin-top:30px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:30px}
+footer p,footer a{color:#d7bfb0;font-size:13px}
+footer h3{margin-top:0}
+.copy{border-top:1px solid #ffffff20;margin-top:25px;padding-top:15px;color:#bda79b;font-size:12px}
+.toast{position:fixed;bottom:22px;left:22px;background:#1d8a60;color:#fff;padding:13px 18px;border-radius:14px;display:none;z-index:50;box-shadow:var(--shadow)}
+@media(max-width:900px){
+ nav{gap:12px}.hero-grid{gap:25px}.categories,.products{grid-template-columns:repeat(2,1fr)}
+ .hero-art img{height:340px}.hero-art{min-height:340px}.features{grid-template-columns:1fr}
+}
+@media(max-width:650px){
+ .nav{min-height:70px}.brand strong{font-size:20px}.brand small{font-size:9px}
+ nav{display:none}.menu{display:block}.actions{margin-right:auto}
+ .hero{padding-top:30px}.hero-grid{grid-template-columns:1fr}.hero-art{order:-1;min-height:250px}.hero-art img{height:250px}
+ h1{font-size:42px}.section{padding:35px 0}.section-head{display:block}
+ .categories,.products{grid-template-columns:1fr 1fr;gap:10px}.category{padding:10px}.category img{height:100px}
+ .card img{height:145px}.card-body{padding:12px}.card h3{font-size:14px}.card p{font-size:11px;min-height:40px}
+ .order-box{grid-template-columns:1fr;padding:22px}.form-grid{grid-template-columns:1fr}
+ .footer-grid{grid-template-columns:1fr}
+ .topbar .container{justify-content:center}
+}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="container"><span data-i18n="delivery">گەیاندن بە خۆڕایی بۆ سلێمانی، کەرکوک، دیالە و بەغدا</span><span>☎ 07709002596</span></div></div>
 
+<header>
+<div class="container nav">
+  <a class="brand" href="#home">
+    <div class="logo">🍰</div>
+    <div><strong>Zana Sweet Room</strong><small data-i18n="brandSub">ماڵی شیرینی زانا</small></div>
+  </a>
+  <button class="menu" onclick="toggleNav()">☰</button>
+  <nav id="nav">
+    <a href="#home" data-i18n="home">سەرەکی</a>
+    <a href="#categories" data-i18n="categories">جۆرەکان</a>
+    <a href="#products" data-i18n="products">بەرهەمەکان</a>
+    <a href="#order" data-i18n="order">ئۆردەر</a>
+    <a href="#contact" data-i18n="contact">پەیوەندی</a>
+  </nav>
+  <div class="actions">
+    <select class="lang" onchange="setLang(this.value)" aria-label="Language">
+      <option value="ku">کوردی</option><option value="ar">العربية</option><option value="en">English</option>
+    </select>
+    <a class="cart" href="#order">🛒 <span id="cartCount">0</span></a>
+  </div>
+</div>
+</header>
+
+<main id="home">
+<section class="hero"><div class="container hero-grid">
+  <div>
+    <span class="eyebrow">✨ <span data-i18n="eyebrow">تامی خۆشی، لە هەر دانەیەکدا</span></span>
+    <h1 data-i18n="heroTitle">شیرینییەکی <span>جیاواز</span><br>بۆ ڕۆژێکی تایبەت</h1>
+    <p data-i18n="heroText">لە Zana Sweet Room ـەوە، شیرینییە تازەکان بە خۆشەویستی ئامادە دەکرێن؛ بۆ میوانی، بۆنە و هەموو ساتێکی خۆش.</p>
+    <div class="hero-buttons"><a class="btn primary" href="#products" data-i18n="viewProducts">بینینی بەرهەمەکان 🍪</a><a class="btn secondary" href="#order" data-i18n="makeOrder">داواکاری بکە 📦</a></div>
+  </div>
+  <div class="hero-art"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1000&q=85" alt="Delicious cake"><div class="floating"><b>100%</b><span data-i18n="fresh">تازە و بە کوالێتی</span></div></div>
+</div></section>
+
+<section class="section" id="categories"><div class="container">
+<div class="section-head"><div><h2 data-i18n="categoryTitle">جۆرەکانی شیرینی</h2><p data-i18n="categoryText">هەڵبژاردەیەکی خۆش بۆ هەموو ذوقێک</p></div></div>
+<div class="categories">
+  <a class="category" href="#products"><img src="https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&w=500&q=80"><b>BAK · پاقلاوە</b><small data-i18n="tray">بە سینی</small></a>
+  <a class="category" href="#products"><img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=500&q=80"><b>CHR · چۆرەك</b><small data-i18n="carton">بە کارتۆن</small></a>
+  <a class="category" href="#products"><img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=500&q=80"><b>CUP · کاب‌کیک</b><small data-i18n="pieces">٢٤ دانە</small></a>
+  <a class="category" href="#products"><img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=500&q=80"><b>KUN · کونافە</b><small data-i18n="kilo">بە کیلۆ</small></a>
+</div></div></section>
+
+<section class="section" id="products"><div class="container">
+<div class="section-head"><div><h2 data-i18n="featured">بەرهەمە هەڵبژێردراوەکان</h2><p data-i18n="featuredText">کۆدەکە هەڵبژێرە و زیاد بکە بۆ ئۆردەرەکەت</p></div></div>
+<div class="products">
+<div class="card"><img src="https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&w=700&q=85"><div class="card-body"><span class="code">BAK-001</span><h3 data-i18n="baklava">پاقلاوەی تایبەت</h3><p data-i18n="baklavaDesc">پاقلاوەی پڕ لە فستەق و تامی خۆش.</p><div class="card-bottom"><span class="price">3,000 د.ع</span><button class="add" onclick="addItem('BAK-001')">+ <span data-i18n="add">زیادکردن</span></button></div></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=700&q=85"><div class="card-body"><span class="code">CHR-001</span><h3 data-i18n="chorek">چۆرەك</h3><p data-i18n="chorekDesc">چۆرەكی نەرم و تازە بۆ بەیانی.</p><div class="card-bottom"><span class="price">11,000 د.ع</span><button class="add" onclick="addItem('CHR-001')">+ <span data-i18n="add">زیادکردن</span></button></div></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=700&q=85"><div class="card-body"><span class="code">CUP-001</span><h3 data-i18n="cupcake">کاب‌کیک</h3><p data-i18n="cupDesc">کاب‌کیکی جوان و گونجاو بۆ میوانی.</p><div class="card-bottom"><span class="price">4,500 د.ع</span><button class="add" onclick="addItem('CUP-001')">+ <span data-i18n="add">زیادکردن</span></button></div></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=700&q=85"><div class="card-body"><span class="code">KUN-001</span><h3 data-i18n="kunafa">کونافە</h3><p data-i18n="kunDesc">کونافەی گەرم و پڕ لە تامی شیرین.</p><div class="card-bottom"><span class="price">4,000 د.ع</span><button class="add" onclick="addItem('KUN-001')">+ <span data-i18n="add">زیادکردن</span></button></div></div></div>
+</div></div></section>
+
+<section class="section"><div class="container features">
+<div class="feature"><div class="icon">🚚</div><h3 data-i18n="f1">گەیاندنی خۆڕایی</h3><p data-i18n="f1t">بۆ سلێمانی، کەرکوک، دیالە و بەغدا.</p></div>
+<div class="feature"><div class="icon">🥮</div><h3 data-i18n="f2">تازە و کوالێتی</h3><p data-i18n="f2t">بەرهەمەکان بە وردی و خۆشەویستی ئامادە دەکرێن.</p></div>
+<div class="feature"><div class="icon">⏰</div><h3 data-i18n="f3">ئامادەکردنی خێرا</h3><p data-i18n="f3t">کاتی گەیاندن لە ٣ کاتژمێرەوە تا ١٥ ڕۆژ.</p></div>
+</div></section>
+
+<section class="section" id="order"><div class="container">
+<div class="order-box"><div><span class="eyebrow">📦 <span data-i18n="orderEyebrow">ئۆردەری خۆت ئێستا تۆمار بکە</span></span><h2 data-i18n="orderTitle">شیرینییە دڵخوازەکانت هەڵبژێرە</h2><p data-i18n="orderText">فۆڕمەکە پڕ بکەرەوە. تیمی زانا پەیوەندیت پێوە دەکات بۆ پشتڕاستکردنەوەی ئۆردەرەکە.</p><p>📍 <span data-i18n="address">سلێمانی، تۆوی مەلیک، نزیک بازاڕی ئیستانبوڵ</span></p></div>
+<form class="order-form" onsubmit="submitOrder(event)"><div class="form-grid">
+<div><label data-i18n="name">ناوی تەواو</label><input id="name" required></div>
+<div><label data-i18n="phone">ژمارەی مۆبایل</label><input id="phone" required></div>
+<div><label data-i18n="city">شار</label><select id="city"><option>سلێمانی</option><option>کەرکوک</option><option>دیالە</option><option>بەغدا</option></select></div>
+<div><label data-i18n="time">کاتی گەیاندن</label><select id="time"><option>زووترین کات دوای ٣ کاتژمێر</option><option>بەیانی</option><option>نیوەڕۆ</option><option>ئێوارە</option><option>سبەی</option><option>لە ٢-٣ ڕۆژی داهاتوو</option></select></div>
+<div class="full"><label data-i18n="details">وردەکاری ئۆردەر</label><textarea id="details" placeholder="BAK-001 × 2 ..."></textarea></div>
+</div><button class="submit" type="submit" data-i18n="submit">ناردنی ئۆردەر بە ئیمەیڵ</button></form>
+</div></div></section>
+</main>
+
+<footer id="contact"><div class="container">
+<div class="footer-grid"><div><div class="brand"><div class="logo">🍰</div><div><strong style="color:#fff">Zana Sweet Room</strong><small style="color:#d7bfb0" data-i18n="brandSub">ماڵی شیرینی زانا</small></div></div><p data-i18n="footerText">تامی خۆشی، لە هەر دانەیەکدا.</p></div>
+<div><h3 data-i18n="contact">پەیوەندی</h3><p>📞 07709002596</p><p>💬 WhatsApp: 07731565510</p><p>✉️ zanacam2005@gmail.com</p></div>
+<div><h3 data-i18n="social">تۆڕە کۆمەڵایەتییەکان</h3><p>Instagram: ibrahimbaghdad2006</p><p>Telegram: @Camb2005</p><p>Facebook: Zana Raheem</p></div></div>
+<div class="copy">© 2026 Zana Sweet Room — <span data-i18n="rights">هەموو مافەکان پارێزراون</span></div>
+</div></footer>
+<div class="toast" id="toast"></div>
+
+<script>
+const dict={
+ku:{delivery:"گەیاندن بە خۆڕایی بۆ سلێمانی، کەرکوک، دیالە و بەغدا",brandSub:"ماڵی شیرینی زانا",home:"سەرەکی",categories:"جۆرەکان",products:"بەرهەمەکان",order:"ئۆردەر",contact:"پەیوەندی",eyebrow:"تامی خۆشی، لە هەر دانەیەکدا",heroTitle:"شیرینییەکی <span>جیاواز</span><br>بۆ ڕۆژێکی تایبەت",heroText:"لە Zana Sweet Room ـەوە، شیرینییە تازەکان بە خۆشەویستی ئامادە دەکرێن؛ بۆ میوانی، بۆنە و هەموو ساتێکی خۆش.",viewProducts:"بینینی بەرهەمەکان 🍪",makeOrder:"داواکاری بکە 📦",fresh:"تازە و بە کوالێتی",categoryTitle:"جۆرەکانی شیرینی",categoryText:"هەڵبژاردەیەکی خۆش بۆ هەموو ذوقێک",tray:"بە سینی",carton:"بە کارتۆن",pieces:"٢٤ دانە",kilo:"بە کیلۆ",featured:"بەرهەمە هەڵبژێردراوەکان",featuredText:"کۆدەکە هەڵبژێرە و زیاد بکە بۆ ئۆردەرەکەت",baklava:"پاقلاوەی تایبەت",baklavaDesc:"پاقلاوەی پڕ لە فستەق و تامی خۆش.",chorek:"چۆرەك",chorekDesc:"چۆرەكی نەرم و تازە بۆ بەیانی.",cupcake:"کاب‌کیک",cupDesc:"کاب‌کیکی جوان و گونجاو بۆ میوانی.",kunafa:"کونافە",kunDesc:"کونافەی گەرم و پڕ لە تامی شیرین.",add:"زیادکردن",f1:"گەیاندنی خۆڕایی",f1t:"بۆ سلێمانی، کەرکوک، دیالە و بەغدا.",f2:"تازە و کوالێتی",f2t:"بەرهەمەکان بە وردی و خۆشەویستی ئامادە دەکرێن.",f3:"ئامادەکردنی خێرا",f3t:"کاتی گەیاندن لە ٣ کاتژمێرەوە تا ١٥ ڕۆژ.",orderEyebrow:"ئۆردەری خۆت ئێستا تۆمار بکە",orderTitle:"شیرینییە دڵخوازەکانت هەڵبژێرە",orderText:"فۆڕمەکە پڕ بکەرەوە. تیمی زانا پەیوەندیت پێوە دەکات بۆ پشتڕاستکردنەوەی ئۆردەرەکە.",address:"سلێمانی، تۆوی مەلیک، نزیک بازاڕی ئیستانبوڵ",name:"ناوی تەواو",phone:"ژمارەی مۆبایل",city:"شار",time:"کاتی گەیاندن",details:"وردەکاری ئۆردەر",submit:"ناردنی ئۆردەر بە ئیمەیڵ",social:"تۆڕە کۆمەڵایەتییەکان",footerText:"تامی خۆشی، لە هەر دانەیەکدا.",rights:"هەموو مافەکان پارێزراون"},
+ar:{delivery:"توصيل مجاني إلى السليمانية وكركوك وديالى وبغداد",brandSub:"بيت حلويات زانا",home:"الرئيسية",categories:"الأصناف",products:"المنتجات",order:"الطلب",contact:"اتصل بنا",eyebrow:"طعم السعادة في كل قطعة",heroTitle:"حلويات <span>مميزة</span><br>ليومك الخاص",heroText:"في Zana Sweet Room نحضّر الحلويات الطازجة بحب لكل مناسبة ولحظة جميلة.",viewProducts:"شاهد المنتجات 🍪",makeOrder:"اطلب الآن 📦",fresh:"طازج وبجودة عالية",categoryTitle:"أصناف الحلويات",categoryText:"اختيارات لذيذة لكل الأذواق",tray:"بالصينية",carton:"بالكرتون",pieces:"٢٤ قطعة",kilo:"بالكيلوغرام",featured:"منتجاتنا المختارة",featuredText:"اختر الكود وأضفه إلى طلبك",baklava:"بقلاوة خاصة",baklavaDesc:"بقلاوة محشوة بالفستق بطعم رائع.",chorek:"چۆرەك",chorekDesc:"چۆرەك طازج وناعم للفطور.",cupcake:"كاب كيك",cupDesc:"كاب كيك جميل مناسب للضيوف.",kunafa:"كنافة",kunDesc:"كنافة ساخنة بطعم حلو.",add:"إضافة",f1:"توصيل مجاني",f1t:"إلى السليمانية وكركوك وديالى وبغداد.",f2:"طازج وجودة",f2t:"نحضّر المنتجات بعناية ومحبة.",f3:"تحضير سريع",f3t:"التوصيل من ٣ ساعات إلى ١٥ يوماً.",orderEyebrow:"سجّل طلبك الآن",orderTitle:"اختر حلوياتك المفضلة",orderText:"املأ النموذج وسيتواصل معك فريق زانا لتأكيد الطلب.",address:"السليمانية، توي ملك، قرب سوق إسطنبول",name:"الاسم الكامل",phone:"رقم الهاتف",city:"المدينة",time:"وقت التوصيل",details:"تفاصيل الطلب",submit:"إرسال الطلب عبر البريد",social:"شبكات التواصل",footerText:"طعم السعادة في كل قطعة.",rights:"جميع الحقوق محفوظة"},
+en:{delivery:"Free delivery to Sulaymaniyah, Kirkuk, Diyala and Baghdad",brandSub:"Zana's Sweet House",home:"Home",categories:"Categories",products:"Products",order:"Order",contact:"Contact",eyebrow:"Happiness in every bite",heroTitle:"A <span>sweet</span> touch<br>for your special day",heroText:"At Zana Sweet Room, fresh sweets are prepared with care for every celebration and beautiful moment.",viewProducts:"View products 🍪",makeOrder:"Place an order 📦",fresh:"Fresh and high quality",categoryTitle:"Sweet categories",categoryText:"Delicious choices for every taste",tray:"By tray",carton:"By carton",pieces:"24 pieces",kilo:"By kilogram",featured:"Featured products",featuredText:"Choose a code and add it to your order",baklava:"Special Baklava",baklavaDesc:"Pistachio-filled baklava with a rich taste.",chorek:"Chorek",chorekDesc:"Soft, fresh chorek for breakfast.",cupcake:"Cupcake",cupDesc:"Beautiful cupcakes for your guests.",kunafa:"Kunafa",kunDesc:"Warm kunafa with a delicious sweet taste.",add:"Add",f1:"Free delivery",f1t:"To Sulaymaniyah, Kirkuk, Diyala and Baghdad.",f2:"Fresh & quality",f2t:"Every product is prepared carefully and lovingly.",f3:"Fast preparation",f3t:"Delivery from 3 hours up to 15 days.",orderEyebrow:"Place your order now",orderTitle:"Choose your favourite sweets",orderText:"Fill in the form and Zana's team will contact you to confirm your order.",address:"Sulaymaniyah, Tui Malik, near Istanbul Market",name:"Full name",phone:"Phone number",city:"City",time:"Delivery time",details:"Order details",submit:"Send order by email",social:"Social media",footerText:"Happiness in every bite.",rights:"All rights reserved"}
+};
+let count=0;
+function setLang(lang){
+ document.documentElement.lang=lang;document.documentElement.dir=lang==="en"?"ltr":"rtl";
+ document.querySelectorAll("[data-i18n]").forEach(el=>{let k=el.dataset.i18n;if(dict[lang][k]!==undefined)el.innerHTML=dict[lang][k]});
+}
+function addItem(code){count++;document.getElementById("cartCount").textContent=count;document.getElementById("details").value+=(document.getElementById("details").value?"\n":"")+code+" × 1";showToast("✓ "+code+" added");}
+function showToast(text){let t=document.getElementById("toast");t.textContent=text;t.style.display="block";setTimeout(()=>t.style.display="none",2200)}
+function toggleNav(){let n=document.getElementById("nav");n.style.display=n.style.display==="flex"?"none":"flex";n.style.flexDirection="column";n.style.position="absolute";n.style.top="70px";n.style.right="4%";n.style.background="#fffaf3";n.style.padding="18px";n.style.border="1px solid #eadfd4";n.style.borderRadius="18px"}
+function submitOrder(e){e.preventDefault();let body=`ناو: ${name.value}\nمۆبایل: ${phone.value}\nشار: ${city.value}\nکاتی گەیاندن: ${time.value}\nئۆردەر:\n${details.value}`;window.location.href="mailto:zanacam2005@gmail.com?subject=New Zana Sweet Room Order&body="+encodeURIComponent(body)}
+</script>
+
+<script>
+(function(){
+  const fallback = "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500"><rect width="800" height="500" fill="#f4e7d5"/><circle cx="400" cy="235" r="130" fill="#6b3f2d"/><text x="400" y="245" text-anchor="middle" font-size="92">🍰</text><text x="400" y="405" text-anchor="middle" font-family="Arial" font-size="34" fill="#6b3f2d">Zana Sweet Room</text></svg>`);
+  document.querySelectorAll('img').forEach(img=>{
+    img.addEventListener('error',function(){
+      if(this.dataset.fallback) return;
+      this.dataset.fallback='1';
+      this.src=fallback;
+    });
+  });
+})();
+</script>
+</body>
+</html>
